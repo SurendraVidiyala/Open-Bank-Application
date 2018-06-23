@@ -27,9 +27,9 @@ public class ThisAccount {
     @JsonProperty("kind")
     private String kind;
     @JsonProperty("IBAN")
-    private Object iBAN;
+    private String iBAN;
     @JsonProperty("swift_bic")
-    private Object swiftBic;
+    private String swiftBic;
     @JsonProperty("bank")
     private Bank bank;
 
@@ -94,31 +94,31 @@ public class ThisAccount {
     }
 
     @JsonProperty("IBAN")
-    public Object getIBAN() {
+    public String getIBAN() {
         return iBAN;
     }
 
     @JsonProperty("IBAN")
-    public void setIBAN(Object iBAN) {
+    public void setIBAN(String iBAN) {
         this.iBAN = iBAN;
     }
 
-    public ThisAccount withIBAN(Object iBAN) {
+    public ThisAccount withIBAN(String iBAN) {
         this.iBAN = iBAN;
         return this;
     }
 
     @JsonProperty("swift_bic")
-    public Object getSwiftBic() {
+    public String getSwiftBic() {
         return swiftBic;
     }
 
     @JsonProperty("swift_bic")
-    public void setSwiftBic(Object swiftBic) {
+    public void setSwiftBic(String swiftBic) {
         this.swiftBic = swiftBic;
     }
 
-    public ThisAccount withSwiftBic(Object swiftBic) {
+    public ThisAccount withSwiftBic(String swiftBic) {
         this.swiftBic = swiftBic;
         return this;
     }

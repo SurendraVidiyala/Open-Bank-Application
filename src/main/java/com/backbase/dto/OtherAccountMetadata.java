@@ -19,138 +19,138 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class OtherAccountMetadata {
 
     @JsonProperty("public_alias")
-    private Object publicAlias;
+    private String publicAlias;
     @JsonProperty("private_alias")
-    private Object privateAlias;
+    private String privateAlias;
     @JsonProperty("more_info")
-    private Object moreInfo;
+    private String moreInfo;
     @JsonProperty("URL")
-    private Object uRL;
+    private String uRL;
     @JsonProperty("image_URL")
-    private Object imageURL;
+    private String imageURL;
     @JsonProperty("open_corporates_URL")
-    private Object openCorporatesURL;
+    private String openCorporatesURL;
     @JsonProperty("corporate_location")
-    private Object corporateLocation;
+    private String corporateLocation;
     @JsonProperty("physical_location")
-    private Object physicalLocation;
+    private String physicalLocation;
 
     @JsonProperty("public_alias")
-    public Object getPublicAlias() {
+    public String getPublicAlias() {
         return publicAlias;
     }
 
     @JsonProperty("public_alias")
-    public void setPublicAlias(Object publicAlias) {
+    public void setPublicAlias(String publicAlias) {
         this.publicAlias = publicAlias;
     }
 
-    public OtherAccountMetadata withPublicAlias(Object publicAlias) {
+    public OtherAccountMetadata withPublicAlias(String publicAlias) {
         this.publicAlias = publicAlias;
         return this;
     }
 
     @JsonProperty("private_alias")
-    public Object getPrivateAlias() {
+    public String getPrivateAlias() {
         return privateAlias;
     }
 
     @JsonProperty("private_alias")
-    public void setPrivateAlias(Object privateAlias) {
+    public void setPrivateAlias(String privateAlias) {
         this.privateAlias = privateAlias;
     }
 
-    public OtherAccountMetadata withPrivateAlias(Object privateAlias) {
+    public OtherAccountMetadata withPrivateAlias(String privateAlias) {
         this.privateAlias = privateAlias;
         return this;
     }
 
     @JsonProperty("more_info")
-    public Object getMoreInfo() {
+    public String getMoreInfo() {
         return moreInfo;
     }
 
     @JsonProperty("more_info")
-    public void setMoreInfo(Object moreInfo) {
+    public void setMoreInfo(String moreInfo) {
         this.moreInfo = moreInfo;
     }
 
-    public OtherAccountMetadata withMoreInfo(Object moreInfo) {
+    public OtherAccountMetadata withMoreInfo(String moreInfo) {
         this.moreInfo = moreInfo;
         return this;
     }
 
     @JsonProperty("URL")
-    public Object getURL() {
+    public String getURL() {
         return uRL;
     }
 
     @JsonProperty("URL")
-    public void setURL(Object uRL) {
+    public void setURL(String uRL) {
         this.uRL = uRL;
     }
 
-    public OtherAccountMetadata withURL(Object uRL) {
+    public OtherAccountMetadata withURL(String uRL) {
         this.uRL = uRL;
         return this;
     }
 
     @JsonProperty("image_URL")
-    public Object getImageURL() {
+    public String getImageURL() {
         return imageURL;
     }
 
     @JsonProperty("image_URL")
-    public void setImageURL(Object imageURL) {
+    public void setImageURL(String imageURL) {
         this.imageURL = imageURL;
     }
 
-    public OtherAccountMetadata withImageURL(Object imageURL) {
+    public OtherAccountMetadata withImageURL(String imageURL) {
         this.imageURL = imageURL;
         return this;
     }
 
     @JsonProperty("open_corporates_URL")
-    public Object getOpenCorporatesURL() {
+    public String getOpenCorporatesURL() {
         return openCorporatesURL;
     }
 
     @JsonProperty("open_corporates_URL")
-    public void setOpenCorporatesURL(Object openCorporatesURL) {
+    public void setOpenCorporatesURL(String openCorporatesURL) {
         this.openCorporatesURL = openCorporatesURL;
     }
 
-    public OtherAccountMetadata withOpenCorporatesURL(Object openCorporatesURL) {
+    public OtherAccountMetadata withOpenCorporatesURL(String openCorporatesURL) {
         this.openCorporatesURL = openCorporatesURL;
         return this;
     }
 
     @JsonProperty("corporate_location")
-    public Object getCorporateLocation() {
+    public String getCorporateLocation() {
         return corporateLocation;
     }
 
     @JsonProperty("corporate_location")
-    public void setCorporateLocation(Object corporateLocation) {
+    public void setCorporateLocation(String corporateLocation) {
         this.corporateLocation = corporateLocation;
     }
 
-    public OtherAccountMetadata withCorporateLocation(Object corporateLocation) {
+    public OtherAccountMetadata withCorporateLocation(String corporateLocation) {
         this.corporateLocation = corporateLocation;
         return this;
     }
 
     @JsonProperty("physical_location")
-    public Object getPhysicalLocation() {
+    public String getPhysicalLocation() {
         return physicalLocation;
     }
 
     @JsonProperty("physical_location")
-    public void setPhysicalLocation(Object physicalLocation) {
+    public void setPhysicalLocation(String physicalLocation) {
         this.physicalLocation = physicalLocation;
     }
 
-    public OtherAccountMetadata withPhysicalLocation(Object physicalLocation) {
+    public OtherAccountMetadata withPhysicalLocation(String physicalLocation) {
         this.physicalLocation = physicalLocation;
         return this;
     }

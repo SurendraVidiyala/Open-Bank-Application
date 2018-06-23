@@ -17,87 +17,87 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class Metadata {
 
     @JsonProperty("narrative")
-    private Object narrative;
+    private String narrative;
     @JsonProperty("comments")
-    private List<Object> comments = null;
+    private List<String> comments = null;
     @JsonProperty("tags")
-    private List<Object> tags = null;
+    private List<String> tags = null;
     @JsonProperty("images")
-    private List<Object> images = null;
+    private List<String> images = null;
     @JsonProperty("where")
-    private Object where;
+    private String where;
 
     @JsonProperty("narrative")
-    public Object getNarrative() {
+    public String getNarrative() {
         return narrative;
     }
 
     @JsonProperty("narrative")
-    public void setNarrative(Object narrative) {
+    public void setNarrative(String narrative) {
         this.narrative = narrative;
     }
 
-    public Metadata withNarrative(Object narrative) {
+    public Metadata withNarrative(String narrative) {
         this.narrative = narrative;
         return this;
     }
 
     @JsonProperty("comments")
-    public List<Object> getComments() {
+    public List<String> getComments() {
         return comments;
     }
 
     @JsonProperty("comments")
-    public void setComments(List<Object> comments) {
+    public void setComments(List<String> comments) {
         this.comments = comments;
     }
 
-    public Metadata withComments(List<Object> comments) {
+    public Metadata withComments(List<String> comments) {
         this.comments = comments;
         return this;
     }
 
     @JsonProperty("tags")
-    public List<Object> getTags() {
+    public List<String> getTags() {
         return tags;
     }
 
     @JsonProperty("tags")
-    public void setTags(List<Object> tags) {
+    public void setTags(List<String> tags) {
         this.tags = tags;
     }
 
-    public Metadata withTags(List<Object> tags) {
+    public Metadata withTags(List<String> tags) {
         this.tags = tags;
         return this;
     }
 
     @JsonProperty("images")
-    public List<Object> getImages() {
+    public List<String> getImages() {
         return images;
     }
 
     @JsonProperty("images")
-    public void setImages(List<Object> images) {
+    public void setImages(List<String> images) {
         this.images = images;
     }
 
-    public Metadata withImages(List<Object> images) {
+    public Metadata withImages(List<String> images) {
         this.images = images;
         return this;
     }
 
     @JsonProperty("where")
-    public Object getWhere() {
+    public String getWhere() {
         return where;
     }
 
     @JsonProperty("where")
-    public void setWhere(Object where) {
+    public void setWhere(String where) {
         this.where = where;
     }
 
-    public Metadata withWhere(Object where) {
+    public Metadata withWhere(String where) {
         this.where = where;
         return this;
     }

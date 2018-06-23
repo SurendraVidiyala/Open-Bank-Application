@@ -25,9 +25,9 @@ public class Details {
     @JsonProperty("completed")
     private String completed;
     @JsonProperty("new_balance")
-    private NewBalance newBalance;
+    private MonetaryValue newBalance;
     @JsonProperty("value")
-    private Value value;
+    private MonetaryValue value;
 
     @JsonProperty("type")
     public String getType() {
@@ -90,31 +90,31 @@ public class Details {
     }
 
     @JsonProperty("new_balance")
-    public NewBalance getNewBalance() {
+    public MonetaryValue getNewBalance() {
         return newBalance;
     }
 
     @JsonProperty("new_balance")
-    public void setNewBalance(NewBalance newBalance) {
+    public void setNewBalance(MonetaryValue newBalance) {
         this.newBalance = newBalance;
     }
 
-    public Details withNewBalance(NewBalance newBalance) {
+    public Details withNewBalance(MonetaryValue newBalance) {
         this.newBalance = newBalance;
         return this;
     }
 
     @JsonProperty("value")
-    public Value getValue() {
+    public MonetaryValue getValue() {
         return value;
     }
 
     @JsonProperty("value")
-    public void setValue(Value value) {
+    public void setValue(MonetaryValue value) {
         this.value = value;
     }
 
-    public Details withValue(Value value) {
+    public Details withValue(MonetaryValue value) {
         this.value = value;
         return this;
     }
