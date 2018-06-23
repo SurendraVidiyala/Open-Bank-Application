@@ -4,7 +4,12 @@ package com.backbase.dto;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-
+/**
+ * DTO for "Details" consisting member variables, getters, setters, builder methods
+ * 
+ * @author Arka Bhattacharya
+ *
+ */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "type",
