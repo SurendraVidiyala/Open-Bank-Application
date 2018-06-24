@@ -1,5 +1,6 @@
 package com.backbase.controller;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,25 +19,37 @@ import com.backbase.services.ApplicationService;
  */
 @RestController
 public class ApplicationController {
-	
+
+	private static final Logger LOGGER = Logger.getLogger(ApplicationController.class);
+
 	@Autowired
 	ApplicationService applicationService;
-	
+
 	@GetMapping("/listAllTransactions")
 	@ResponseBody
 	public ResponseEntity<Transactions> getAllTransactions() {
-        return applicationService.getAllTransactions();
-    }
-	
+		if (LOGGER.isDebugEnabled()) {
+			LOGGER.debug("getAllTransactions is executed!");
+		}
+		return applicationService.getAllTransactions();
+	}
+
 	@GetMapping("/listAllTransactions/{transactionType}")
 	@ResponseBody
-	public ResponseEntity<Transactions> getFilteredTransactions(@PathVariable(value="transactionType")String filterKey) {
-        return applicationService.getFilteredTransactions(filterKey);
-    }
-	
+	public ResponseEntity<Transactions> getFilteredTransactions(
+			@PathVariable(value = "transactionType") String filterKey) {
+		if (LOGGER.isDebugEnabled()) {
+			LOGGER.debug("getFilteredTransactions is executed with filterKey=[" + filterKey + "]");
+		}
+		return applicationService.getFilteredTransactions(filterKey);
+	}
+
 	@GetMapping("/totalAmount/{transactionType}")
 	@ResponseBody
-	public ResponseEntity<String> getTotalAmount(@PathVariable(value="transactionType")String filterKey) {
-        return applicationService.getTotalAmount(filterKey);
-    }
+	public ResponseEntity<String> getTotalAmount(@PathVariable(value = "transactionType") String filterKey) {
+		if (LOGGER.isDebugEnabled()) {
+			LOGGER.debug("getTotalAmount is executed with filterKey=[" + filterKey + "]");
+		}
+		return applicationService.getTotalAmount(filterKey);
+	}
 }

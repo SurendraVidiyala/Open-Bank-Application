@@ -1,5 +1,6 @@
 package com.backbase.services;
 
+import org.apache.log4j.Logger;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -19,8 +20,7 @@ import com.backbase.dto.Transactions;
 @Service
 public class ApplicationServiceImpl implements ApplicationService {
 
-	// private static final Logger logger =
-	// LogManager.getLogger(ApplicationServiceImpl.class);
+	private static final Logger LOGGER = Logger.getLogger(ApplicationServiceImpl.class);
 
 	/*
 	 * @Autowired RestTemplate restTemplate;
@@ -30,10 +30,18 @@ public class ApplicationServiceImpl implements ApplicationService {
 	 * Method to fetch all the transaction and list them
 	 */
 	public ResponseEntity<Transactions> getAllTransactions() {
+		if (LOGGER.isDebugEnabled()) {
+			LOGGER.debug("getAllTransactions is executed");
+		}
+
 		RestTemplate restTemplate = new RestTemplate();
 		ResponseEntity<Transactions> response = restTemplate.exchange(ApplicationConstants.BASEURL, HttpMethod.GET,
 				null, Transactions.class);
-		System.out.println(response);
+
+		if (LOGGER.isDebugEnabled()) {
+			LOGGER.debug("response object: " + response.toString());
+			LOGGER.debug("Exiting getAllTransactions");
+		}
 		return response;
 	}
 
@@ -44,6 +52,9 @@ public class ApplicationServiceImpl implements ApplicationService {
 	 * @param
 	 */
 	public ResponseEntity<Transactions> getFilteredTransactions(String filterKey) {
+		if (LOGGER.isDebugEnabled()) {
+			LOGGER.debug("getFilteredTransactions is executed with filterKey=[" + filterKey + "]");
+		}
 		return null;// TODO
 	}
 
@@ -54,6 +65,9 @@ public class ApplicationServiceImpl implements ApplicationService {
 	 * @param
 	 */
 	public ResponseEntity<String> getTotalAmount(String filterKey) {
+		if (LOGGER.isDebugEnabled()) {
+			LOGGER.debug("getTotalAmount is executed with filterKey=[" + filterKey + "]");
+		}
 		return null;// TODO
 	}
 

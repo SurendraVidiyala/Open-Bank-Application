@@ -1,10 +1,7 @@
 package com.backbase.services;
 
-import java.util.List;
-
 import org.springframework.http.ResponseEntity;
 
-import com.backbase.dto.Transaction;
 import com.backbase.dto.Transactions;
 
 /**

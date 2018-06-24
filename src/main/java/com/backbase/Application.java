@@ -12,6 +12,6 @@ public class Application {
 
 	public static void main(String[] args) {
 		ApplicationService applicationService = new ApplicationServiceImpl();
-		System.out.println(applicationService.getAllTransactions());
+		applicationService.getAllTransactions();
 	}
 }
