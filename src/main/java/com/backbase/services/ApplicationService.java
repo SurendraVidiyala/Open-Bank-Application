@@ -1,8 +1,10 @@
 package com.backbase.services;
 
+import java.util.ArrayList;
+
 import org.springframework.http.ResponseEntity;
 
-import com.backbase.dto.Transactions;
+import com.backbase.dto.BackbaseResponseBody;
 
 /**
  * Service Interface. Implemented by ApplicationServiceImpl
@@ -11,9 +13,9 @@ import com.backbase.dto.Transactions;
  *
  */
 public interface ApplicationService {
-	ResponseEntity<Transactions> getAllTransactions();
+	ResponseEntity<ArrayList<BackbaseResponseBody>> getAllTransactions();
 
-	ResponseEntity<Transactions> getFilteredTransactions(String filterKey);
+	ResponseEntity<ArrayList<BackbaseResponseBody>> getFilteredTransactions(String filterKey);
 
 	ResponseEntity<String> getTotalAmount(String filterKey);
 }

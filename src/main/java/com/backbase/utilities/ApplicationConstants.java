@@ -1,4 +1,4 @@
-package com.backbase.constants;
+package com.backbase.utilities;
 
 /**
  * Constant class holding all the Application constants

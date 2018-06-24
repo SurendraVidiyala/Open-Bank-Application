@@ -19,7 +19,7 @@ public class MonetaryValue {
 	@JsonProperty("currency")
 	private String currency;
 	@JsonProperty("amount")
-	private Object amount;
+	private String amount;
 
 	@JsonProperty("currency")
 	public String getCurrency() {
@@ -37,16 +37,16 @@ public class MonetaryValue {
 	}
 
 	@JsonProperty("amount")
-	public Object getAmount() {
+	public String getAmount() {
 		return amount;
 	}
 
 	@JsonProperty("amount")
-	public void setAmount(Object amount) {
+	public void setAmount(String amount) {
 		this.amount = amount;
 	}
 
-	public MonetaryValue withAmount(Object amount) {
+	public MonetaryValue withAmount(String amount) {
 		this.amount = amount;
 		return this;
 	}

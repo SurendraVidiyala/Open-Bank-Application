@@ -1,13 +1,18 @@
 package com.backbase.services;
 
+import java.util.ArrayList;
+
 import org.apache.log4j.Logger;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.backbase.constants.ApplicationConstants;
+import com.backbase.dto.BackbaseResponseBody;
 import com.backbase.dto.Transactions;
+import com.backbase.utilities.ApplicationConstants;
+import com.backbase.utilities.TransactionsToBackbaseResponseBodyMapper;
 
 /**
  * Service Implementation class with 3 major methods: [1] Fetch all the
@@ -29,7 +34,9 @@ public class ApplicationServiceImpl implements ApplicationService {
 	/**
 	 * Method to fetch all the transaction and list them
 	 */
-	public ResponseEntity<Transactions> getAllTransactions() {
+	public ResponseEntity<ArrayList<BackbaseResponseBody>> getAllTransactions() {
+		ArrayList<BackbaseResponseBody> backbaseResponseBodyList = new ArrayList<BackbaseResponseBody>();
+
 		if (LOGGER.isDebugEnabled()) {
 			LOGGER.debug("getAllTransactions is executed");
 		}
@@ -38,11 +45,18 @@ public class ApplicationServiceImpl implements ApplicationService {
 		ResponseEntity<Transactions> response = restTemplate.exchange(ApplicationConstants.BASEURL, HttpMethod.GET,
 				null, Transactions.class);
 
+		if (null != response && null != response.getBody()) {
+			backbaseResponseBodyList = TransactionsToBackbaseResponseBodyMapper
+					.transactionsToBackbaseResponseBodyConverter(response.getBody(), null);
+		} else
+			backbaseResponseBodyList = null;
+
+		ResponseEntity<ArrayList<BackbaseResponseBody>> resp = new ResponseEntity<ArrayList<BackbaseResponseBody>>(backbaseResponseBodyList,HttpStatus.OK);
+
 		if (LOGGER.isDebugEnabled()) {
-			LOGGER.debug("response object: " + response.toString());
 			LOGGER.debug("Exiting getAllTransactions");
 		}
-		return response;
+		return resp;
 	}
 
 	/**
@@ -51,11 +65,28 @@ public class ApplicationServiceImpl implements ApplicationService {
 	 * 
 	 * @param
 	 */
-	public ResponseEntity<Transactions> getFilteredTransactions(String filterKey) {
+	public ResponseEntity<ArrayList<BackbaseResponseBody>> getFilteredTransactions(String filterKey) {
 		if (LOGGER.isDebugEnabled()) {
 			LOGGER.debug("getFilteredTransactions is executed with filterKey=[" + filterKey + "]");
 		}
-		return null;// TODO
+		ArrayList<BackbaseResponseBody> backbaseResponseBodyList = new ArrayList<BackbaseResponseBody>();
+
+		RestTemplate restTemplate = new RestTemplate();
+		ResponseEntity<Transactions> response = restTemplate.exchange(ApplicationConstants.BASEURL, HttpMethod.GET,
+				null, Transactions.class);
+
+		if (null != response && null != response.getBody()) {
+			backbaseResponseBodyList = TransactionsToBackbaseResponseBodyMapper
+					.transactionsToBackbaseResponseBodyConverter(response.getBody(), filterKey);
+		} else
+			backbaseResponseBodyList = null;
+
+		ResponseEntity<ArrayList<BackbaseResponseBody>> resp = new ResponseEntity<ArrayList<BackbaseResponseBody>>(backbaseResponseBodyList,HttpStatus.OK);
+
+		if (LOGGER.isDebugEnabled()) {
+			LOGGER.debug("Exiting getAllTransactions");
+		}
+		return resp;
 	}
 
 	/**
@@ -68,6 +99,18 @@ public class ApplicationServiceImpl implements ApplicationService {
 		if (LOGGER.isDebugEnabled()) {
 			LOGGER.debug("getTotalAmount is executed with filterKey=[" + filterKey + "]");
 		}
+		ArrayList<BackbaseResponseBody> backbaseResponseBodyList = new ArrayList<BackbaseResponseBody>();
+
+		RestTemplate restTemplate = new RestTemplate();
+		ResponseEntity<Transactions> response = restTemplate.exchange(ApplicationConstants.BASEURL, HttpMethod.GET,
+				null, Transactions.class);
+
+		if (null != response && null != response.getBody()) {
+			backbaseResponseBodyList = TransactionsToBackbaseResponseBodyMapper
+					.transactionsToBackbaseResponseBodyConverter(response.getBody(), filterKey);
+		} else
+			backbaseResponseBodyList = null;
+		
 		return null;// TODO
 	}
 

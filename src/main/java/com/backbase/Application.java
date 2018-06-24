@@ -12,6 +12,11 @@ public class Application {
 
 	public static void main(String[] args) {
 		ApplicationService applicationService = new ApplicationServiceImpl();
+
+		//Test retrieval of all transactions()
 		applicationService.getAllTransactions();
+		
+		//Test retrieval of transactions based on filter
+		applicationService.getFilteredTransactions("SANDBOX_TAN");
 	}
 }
