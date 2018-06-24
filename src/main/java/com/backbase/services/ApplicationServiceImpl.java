@@ -28,6 +28,11 @@ public class ApplicationServiceImpl implements ApplicationService {
 		RestTemplate restTemplate = new RestTemplate();
 		ResponseEntity<String> response = restTemplate.exchange(ApplicationConstants.BASEURL, HttpMethod.GET, null, String.class);
 		return response.getBody();
+		
+		/*Not working
+		RestTemplate restTemplate = new RestTemplate();
+		List<Transaction> response = (List<Transaction>) restTemplate.exchange(ApplicationConstants.BASEURL, HttpMethod.GET, null, List.class);
+		return response;*/
 	}
 
 	/**
