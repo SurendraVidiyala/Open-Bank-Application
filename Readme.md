@@ -3,7 +3,7 @@ Open Bank Application (24-06-2018)
 
 A Java web application based on the standard servlet spec. The application provides a RESTful API that retrieves transactions from OpenBank sandbox and transforms the data.
 
-#3 API endpoints:
+# 3 API endpoints:
 
 [1] Fetch all the transactions and map them 
  

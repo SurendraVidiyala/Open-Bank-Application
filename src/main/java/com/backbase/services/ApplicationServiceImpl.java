@@ -1,7 +1,5 @@
 package com.backbase.services;
 
-import java.io.IOException;
-
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -9,9 +7,6 @@ import org.springframework.web.client.RestTemplate;
 
 import com.backbase.constants.ApplicationConstants;
 import com.backbase.dto.Transactions;
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * Service Implementation class with 3 major methods: [1] Fetch all the
