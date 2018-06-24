@@ -7,7 +7,7 @@
       http://java.sun.com/xml/ns/javaee/web-app_3_1.xsd" 
    id="WebApp_ID" version="3.1">
  
-   <display-name>Spring MVC Java Config App</display-name>
+   <display-name>Open Bank Consumer App</display-name>
  
    <servlet>
       <servlet-name>mvc</servlet-name>
@@ -27,12 +27,36 @@
    </context-param>
    <context-param>
       <param-name>contextConfigLocation</param-name>
-      <param-value>org.baeldung.spring.web.config</param-value>
+      <param-value>com.backbase</param-value>
    </context-param>
    <listener>
-      <listener-class>
-         org.springframework.web.context.ContextLoaderListener
-      </listener-class>
+      <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
    </listener>
+ 
+   <servlet>
+      <servlet-name>rest</servlet-name>
+      <servlet-class>
+         org.springframework.web.servlet.DispatcherServlet
+      </servlet-class>
+      <init-param>
+         <param-name>contextClass</param-name>
+         <param-value>
+            org.springframework.web.context.support.AnnotationConfigWebApplicationContext
+         </param-value>
+      </init-param>
+      <init-param>
+         <param-name>contextConfigLocation</param-name>
+         <param-value>com.backbase</param-value>
+      </init-param>
+      <load-on-startup>1</load-on-startup>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>rest</servlet-name>
+      <url-pattern>/</url-pattern>
+   </servlet-mapping>
+ 
+   <welcome-file-list>
+      <welcome-file />
+   </welcome-file-list>
  
 </web-app>

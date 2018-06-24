@@ -38,4 +38,4 @@ Thumbs.db
 
 # Other files #
 ###############
-*pom.properties
+*/pom.properties

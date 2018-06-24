@@ -1,3 +1,4 @@
+package com.backbase;
 import com.backbase.services.ApplicationService;
 import com.backbase.services.ApplicationServiceImpl;
 
@@ -13,6 +14,4 @@ public class Application {
 		ApplicationService applicationService = new ApplicationServiceImpl();
 		System.out.println(applicationService.getAllTransactions());
 	}
-	
-
 }
