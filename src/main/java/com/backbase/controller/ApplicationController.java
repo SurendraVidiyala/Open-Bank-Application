@@ -30,7 +30,7 @@ public class ApplicationController {
         return new ResponseEntity<List<Transaction>>(transactions, HttpStatus.OK);
     }*/
 	
-	@GetMapping("/listAllTransaction")
+	@GetMapping("/listAllTransactions")
 	@ResponseBody
 	public ResponseEntity<String> listAllUsers() {
         String transactions = applicationService.getAllTransactions();

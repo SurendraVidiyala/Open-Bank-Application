@@ -2,42 +2,47 @@ package com.backbase.services;
 
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.backbase.constants.ApplicationConstants;
 
 /**
- * Service Implementation class with 3 major methods:
- *  [1] Fetch all the transactions
- *  [2] Fetch transactions based on transaction type filter
- *  [3] Calculate the total amount for transaction type
+ * Service Implementation class with 3 major methods: [1] Fetch all the
+ * transactions [2] Fetch transactions based on transaction type filter [3]
+ * Calculate the total amount for transaction type
  * 
  * @author Arka Bhattacharya
  *
  */
+@Service
 public class ApplicationServiceImpl implements ApplicationService {
 
-	/*@Autowired
-	RestTemplate restTemplate;*/
-	
+	/*
+	 * @Autowired RestTemplate restTemplate;
+	 */
+
 	/**
 	 * Method to fetch all the transaction and list them
 	 */
 	public String getAllTransactions() {
-		
+
 		RestTemplate restTemplate = new RestTemplate();
-		ResponseEntity<String> response = restTemplate.exchange(ApplicationConstants.BASEURL, HttpMethod.GET, null, String.class);
+		ResponseEntity<String> response = restTemplate.exchange(ApplicationConstants.BASEURL, HttpMethod.GET, null,
+				String.class);
 		return response.getBody();
-		
-		/*Not working
-		RestTemplate restTemplate = new RestTemplate();
-		List<Transaction> response = (List<Transaction>) restTemplate.exchange(ApplicationConstants.BASEURL, HttpMethod.GET, null, List.class);
-		return response;*/
+
+		/*
+		 * Not working RestTemplate restTemplate = new RestTemplate(); List<Transaction>
+		 * response = (List<Transaction>)
+		 * restTemplate.exchange(ApplicationConstants.BASEURL, HttpMethod.GET, null,
+		 * List.class); return response;
+		 */
 	}
 
 	/**
-	 * Method to fetch all the transaction and filter the output based on
-	 * transactionType
+	 * Method to fetch the transactions based on the "transactionType" values passed
+	 * as a filter key
 	 * 
 	 * @param
 	 */
