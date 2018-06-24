@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import org.apache.log4j.Logger;
 
 import com.backbase.dto.BackbaseResponseBody;
-import com.backbase.dto.MonetaryValue;
 import com.backbase.dto.OtherAccount;
 import com.backbase.dto.Transaction;
 import com.backbase.dto.Transactions;
+import com.backbase.dto.Value;
 
 /**
  * Mapper implementation class which contains method to map Transactions type of
@@ -41,11 +41,11 @@ public class TransactionsToBackbaseResponseBodyMapper {
 			if (null == filterkey || (null != transactionIterator.getDetails()
 					&& filterkey.equals(transactionIterator.getDetails().getType()))) {
 
-				MonetaryValue tempValue = null;
+				Value tempValue = null;
 				BackbaseResponseBody temp = new BackbaseResponseBody();
 				OtherAccount tempOtherAccount = transactionIterator.getOtherAccount();
 
-				if (null != transactionIterator.getDetails() && null == transactionIterator.getDetails().getValue())
+				if (null != transactionIterator.getDetails() && null != transactionIterator.getDetails().getValue())
 					tempValue = transactionIterator.getDetails().getValue();
 
 				if (null == transactionIterator.getId())

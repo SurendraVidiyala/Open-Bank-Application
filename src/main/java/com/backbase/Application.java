@@ -1,4 +1,5 @@
 package com.backbase;
+
 import com.backbase.services.ApplicationService;
 import com.backbase.services.ApplicationServiceImpl;
 
@@ -13,10 +14,13 @@ public class Application {
 	public static void main(String[] args) {
 		ApplicationService applicationService = new ApplicationServiceImpl();
 
-		//Test retrieval of all transactions()
+		// Test retrieval of all transactions()
 		applicationService.getAllTransactions();
-		
-		//Test retrieval of transactions based on filter
+
+		// Test retrieval of transactions based on filter
 		applicationService.getFilteredTransactions("SANDBOX_TAN");
+
+		// Test total amount calculation based on filter
+		applicationService.getTotalAmount("SANDBOX_TAN");
 	}
 }

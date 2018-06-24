@@ -32,7 +32,7 @@ public class Details {
     @JsonProperty("new_balance")
     private MonetaryValue newBalance;
     @JsonProperty("value")
-    private MonetaryValue value;
+    private Value value;
 
     @JsonProperty("type")
     public String getType() {
@@ -110,16 +110,16 @@ public class Details {
     }
 
     @JsonProperty("value")
-    public MonetaryValue getValue() {
+    public Value getValue() {
         return value;
     }
 
     @JsonProperty("value")
-    public void setValue(MonetaryValue value) {
+    public void setValue(Value value) {
         this.value = value;
     }
 
-    public Details withValue(MonetaryValue value) {
+    public Details withValue(Value value) {
         this.value = value;
         return this;
     }

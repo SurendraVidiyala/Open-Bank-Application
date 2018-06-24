@@ -12,6 +12,7 @@ import org.springframework.web.client.RestTemplate;
 import com.backbase.dto.BackbaseResponseBody;
 import com.backbase.dto.Transactions;
 import com.backbase.utilities.ApplicationConstants;
+import com.backbase.utilities.Calculation;
 import com.backbase.utilities.TransactionsToBackbaseResponseBodyMapper;
 
 /**
@@ -111,7 +112,10 @@ public class ApplicationServiceImpl implements ApplicationService {
 		} else
 			backbaseResponseBodyList = null;
 		
-		return null;// TODO
+		if (LOGGER.isDebugEnabled()) {
+			LOGGER.debug("Exiting getTotalAmount");
+		}
+		return new ResponseEntity<String>(Calculation.getTotalAmount(backbaseResponseBodyList),HttpStatus.OK);
 	}
 
 }
