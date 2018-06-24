@@ -15,11 +15,11 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "com.backbase")
-@PropertySource("app.properties")
+//@PropertySource("app.properties")
 public class ApplicationConfig {
 
-	@Bean
+	/*@Bean
 	public static PropertySourcesPlaceholderConfigurer getPropertySourcesPlaceholderConfigurer() {
 		return new PropertySourcesPlaceholderConfigurer();
-	}
+	}*/
 }
