@@ -18,5 +18,5 @@ public interface ApplicationService {
 
 	ResponseEntity<Transactions> getFilteredTransactions(String filterKey);
 
-	String getTotalAmount(String filterKey);
+	ResponseEntity<String> getTotalAmount(String filterKey);
 }

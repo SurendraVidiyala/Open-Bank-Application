@@ -33,4 +33,10 @@ public class ApplicationController {
 	public ResponseEntity<Transactions> getFilteredTransactions(@PathVariable(value="transactionType")String filterKey) {
         return applicationService.getFilteredTransactions(filterKey);
     }
+	
+	@GetMapping("/totalAmount/{transactionType}")
+	@ResponseBody
+	public ResponseEntity<String> getTotalAmount(@PathVariable(value="transactionType")String filterKey) {
+        return applicationService.getTotalAmount(filterKey);
+    }
 }

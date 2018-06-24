@@ -53,8 +53,8 @@ public class ApplicationServiceImpl implements ApplicationService {
 	 * 
 	 * @param
 	 */
-	public String getTotalAmount(String filterKey) {
-		return "TODO";// TODO
+	public ResponseEntity<String> getTotalAmount(String filterKey) {
+		return null;// TODO
 	}
 
 }
