@@ -3,6 +3,7 @@ package com.backbase.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,9 +28,9 @@ public class ApplicationController {
         return applicationService.getAllTransactions();
     }
 	
-	@GetMapping("/listAllTransactions/")
+	@GetMapping("/listAllTransactions/{transactionType}")
 	@ResponseBody
-	public ResponseEntity<Transactions> getFilteredTransactions(String filterKey) {
+	public ResponseEntity<Transactions> getFilteredTransactions(@PathVariable(value="transactionType")String filterKey) {
         return applicationService.getFilteredTransactions(filterKey);
     }
 }

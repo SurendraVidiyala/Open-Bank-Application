@@ -8,19 +8,19 @@ A Java web application based on the standard servlet spec. The application provi
 [1] Fetch all the transactions and map them 
  
 ```
-http://localhost:8080/api/v1/listAllTransactions
+http://localhost:8080/listAllTransactions
 ```
 
 [2] Fetch transactions based on transaction type filter 
 
 ```
-http://localhost:8080/api/v1/listAllTransactions/{transactionType}
+http://localhost:8080/listAllTransactions/{transactionType}
 ```
 
 [3] Calculate the total amount for transaction type
  
 ```
-http://localhost:8080/api/v1/totalAmount/{transactionType}
+http://localhost:8080/totalAmount/{transactionType}
 ```
 
 # Technologies used:
