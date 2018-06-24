@@ -1,11 +1,17 @@
 package com.backbase.services;
 
+import java.io.IOException;
+
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.backbase.constants.ApplicationConstants;
+import com.backbase.dto.Transactions;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * Service Implementation class with 3 major methods: [1] Fetch all the
@@ -18,6 +24,9 @@ import com.backbase.constants.ApplicationConstants;
 @Service
 public class ApplicationServiceImpl implements ApplicationService {
 
+	// private static final Logger logger =
+	// LogManager.getLogger(ApplicationServiceImpl.class);
+
 	/*
 	 * @Autowired RestTemplate restTemplate;
 	 */
@@ -25,19 +34,12 @@ public class ApplicationServiceImpl implements ApplicationService {
 	/**
 	 * Method to fetch all the transaction and list them
 	 */
-	public String getAllTransactions() {
-
+	public ResponseEntity<Transactions> getAllTransactions() {
 		RestTemplate restTemplate = new RestTemplate();
-		ResponseEntity<String> response = restTemplate.exchange(ApplicationConstants.BASEURL, HttpMethod.GET, null,
-				String.class);
-		return response.getBody();
-
-		/*
-		 * Not working RestTemplate restTemplate = new RestTemplate(); List<Transaction>
-		 * response = (List<Transaction>)
-		 * restTemplate.exchange(ApplicationConstants.BASEURL, HttpMethod.GET, null,
-		 * List.class); return response;
-		 */
+		ResponseEntity<Transactions> response = restTemplate.exchange(ApplicationConstants.BASEURL, HttpMethod.GET,
+				null, Transactions.class);
+		System.out.println(response);
+		return response;
 	}
 
 	/**
@@ -46,8 +48,8 @@ public class ApplicationServiceImpl implements ApplicationService {
 	 * 
 	 * @param
 	 */
-	public String getFilteredTransactions(String filterKey) {
-		return "TODO";// TODO
+	public ResponseEntity<Transactions> getFilteredTransactions(String filterKey) {
+		return null;// TODO
 	}
 
 	/**
