@@ -17,7 +17,7 @@ public class Calculation {
 	private static final Logger LOGGER = Logger.getLogger(Calculation.class);
 
 	/**
-	 * Converter method to map and convert the response received from sandbox
+	 * Total Amount calculator for the selected transaction type
 	 * 
 	 * @param
 	 * @return Total in String format

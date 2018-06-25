@@ -28,10 +28,6 @@ public class ApplicationServiceImpl implements ApplicationService {
 
 	private static final Logger LOGGER = Logger.getLogger(ApplicationServiceImpl.class);
 
-	/*
-	 * @Autowired RestTemplate restTemplate;
-	 */
-
 	/**
 	 * Method to fetch all the transaction and list them
 	 */
@@ -52,7 +48,8 @@ public class ApplicationServiceImpl implements ApplicationService {
 		} else
 			backbaseResponseBodyList = null;
 
-		ResponseEntity<ArrayList<BackbaseResponseBody>> resp = new ResponseEntity<ArrayList<BackbaseResponseBody>>(backbaseResponseBodyList,HttpStatus.OK);
+		ResponseEntity<ArrayList<BackbaseResponseBody>> resp = new ResponseEntity<ArrayList<BackbaseResponseBody>>(
+				backbaseResponseBodyList, HttpStatus.OK);
 
 		if (LOGGER.isDebugEnabled()) {
 			LOGGER.debug("Exiting getAllTransactions");
@@ -82,7 +79,8 @@ public class ApplicationServiceImpl implements ApplicationService {
 		} else
 			backbaseResponseBodyList = null;
 
-		ResponseEntity<ArrayList<BackbaseResponseBody>> resp = new ResponseEntity<ArrayList<BackbaseResponseBody>>(backbaseResponseBodyList,HttpStatus.OK);
+		ResponseEntity<ArrayList<BackbaseResponseBody>> resp = new ResponseEntity<ArrayList<BackbaseResponseBody>>(
+				backbaseResponseBodyList, HttpStatus.OK);
 
 		if (LOGGER.isDebugEnabled()) {
 			LOGGER.debug("Exiting getAllTransactions");
@@ -111,11 +109,11 @@ public class ApplicationServiceImpl implements ApplicationService {
 					.transactionsToBackbaseResponseBodyConverter(response.getBody(), filterKey);
 		} else
 			backbaseResponseBodyList = null;
-		
+
 		if (LOGGER.isDebugEnabled()) {
 			LOGGER.debug("Exiting getTotalAmount");
 		}
-		return new ResponseEntity<String>(Calculation.getTotalAmount(backbaseResponseBodyList),HttpStatus.OK);
+		return new ResponseEntity<String>(Calculation.getTotalAmount(backbaseResponseBodyList), HttpStatus.OK);
 	}
 
 }

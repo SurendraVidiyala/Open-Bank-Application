@@ -37,14 +37,12 @@ http://localhost:8080/totalAmount/{transactionType}
 
 # Future Scope:
 
+•	Hosting in a server
+
 •	Use of Apache Camel to route the web service call
 
 •	Secure the page with Spring security
 
-# Features not included:
+•	Exception handling
 
-•	Fetch transactions based on transaction type filter
-
-•	Calculate the total amount for transaction type
-
-•	Enable Logging and Exception handling
+•	Unit test cases
